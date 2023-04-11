@@ -19,6 +19,7 @@ version: 0.2
 phases:
   build:
     commands:
+      - go test
       - docker build -t git.systementor.se/yacloud/yagolangapi .
       - docker login -u yacloud -p yacloud1 https://git.systementor.se
       - docker push git.systementor.se/yacloud/yagolangapi 

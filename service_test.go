@@ -15,7 +15,7 @@ func TestSalaryIsCalculatedFromHoursTimesHourlysalary(t *testing.T) {
 	//act
 	result := CalculateSalary(name, age, hourlySalary, hoursWorked)
 
-	assert.Equal(t, 500, result)
+	assert.Equal(t, 5001, result)
 
 }
 
