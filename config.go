@@ -28,6 +28,14 @@ type Config struct {
 		BaseAddress     string `yaml:"baseAddress" envconfig:"SSO_BASEADDRESS"`
 		BackBaseAddress string `yaml:"backBaseAddress" envconfig:"SSO_BACKBASEADDRESS"`
 	} `yaml:"sso"`
+
+	S3 struct {
+		AwsKey       string `yaml:"aws_key" envconfig:"S3_AWSKEY"`
+		AwsSecret    string `yaml:"aws_secret" envconfig:"S3_AWSSECRET"`
+		HostBase     string `yaml:"s3_host_base" envconfig:"S3_HOSTBASE"`
+		Urlgenerator string `yaml:"urlgenerator" envconfig:"S3_URLGENERATOR"`
+		BucketName   string `yaml:"bucket" envconfig:"S3_BUCKET"`
+	} `yaml:"s3"`
 }
 
 func readConfig(cfg *Config) {
@@ -38,11 +46,16 @@ func readConfig(cfg *Config) {
 
 func readFile(cfg *Config) {
 	fileName := "config.yml"
+	doReadFile(cfg, fileName)
 	s := os.Getenv("RUNENVIRONMENT")
 	if len(s) > 0 {
 		fileName = "config" + s + ".yml"
+		doReadFile(cfg, fileName)
 	}
 
+}
+
+func doReadFile(cfg *Config, fileName string) {
 	f, _ := os.Open(fileName)
 	defer f.Close()
 	decoder := yaml.NewDecoder(f)

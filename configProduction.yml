@@ -19,3 +19,9 @@ sso:
   backBaseAddress: "https://localhost:8080/"
 
 
+s3:
+  aws_key: "e74f3ebd16517acd6cf2ce145af234aef5bab39b"
+  aws_secret: "KYgM66sbxu6RbKYZGs+IYukSYLdZdJJmJS9w7vwzuqk="
+  s3_host_base: "axmjqhyyjpat.compat.objectstorage.eu-amsterdam-1.oraclecloud.com"
+  urlgenerator: "https://objectstorage.eu-amsterdam-1.oraclecloud.com/n/axmjqhyyjpat/b/aspcodeprod-aspcodeprod/o/"
+  bucket: "aspcodeprod-aspcodeprod"
