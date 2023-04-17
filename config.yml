@@ -19,9 +19,14 @@ sso:
   backBaseAddress: "https://localhost:8080/"
 
 s3:
-  aws_key: "0031162fe9996230000000004"
-  aws_secret: "K003UBTE8G1i6GzRIf91cB9g1vv+Q6E"
-  s3_host_base: "s3.eu-central-003.backblazeb2.com"
-  urlgenerator: "https://f003.backblazeb2.com/file/<BUCKETNAME>/<FILENAME>"
-  bucket: "externals3"
+  # aws_key: "0031162fe9996230000000004"
+  # aws_secret: "K003UBTE8G1i6GzRIf91cB9g1vv+Q6E"
+  # s3_host_base: "s3.eu-central-003.backblazeb2.com"
+  # urlgenerator: "https://f003.backblazeb2.com/file/<BUCKETNAME>/<FILENAME>"
+  # bucket: "externals3"
+  aws_key: "AKIARNEJ3RYDUIIPO5G5"
+  aws_secret: "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"
+  s3_host_base: "s3.eu-north-1.amazonaws.com"
+  urlgenerator: "https://<BUCKETNAME>.s3.eu-north-1.amazonaws.com/<FILENAME>"
+  bucket: "externalexample22"
 
