@@ -20,8 +20,8 @@ sso:
 
 
 s3:
-  aws_key: "e74f3ebd16517acd6cf2ce145af234aef5bab39b"
-  aws_secret: "KYgM66sbxu6RbKYZGs+IYukSYLdZdJJmJS9w7vwzuqk="
-  s3_host_base: "axmjqhyyjpat.compat.objectstorage.eu-amsterdam-1.oraclecloud.com"
-  urlgenerator: "https://objectstorage.eu-amsterdam-1.oraclecloud.com/n/axmjqhyyjpat/b/aspcodeprod-aspcodeprod/o/"
-  bucket: "aspcodeprod-aspcodeprod"
+  aws_key: "0031162fe9996230000000004"
+  aws_secret: "K003UBTE8G1i6GzRIf91cB9g1vv+Q6E"
+  s3_host_base: "s3.eu-central-003.backblazeb2.com"
+  urlgenerator: "https://f003.backblazeb2.com/file/<BUCKETNAME>/<FILENAME>"
+  bucket: "externals3"
