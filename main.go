@@ -94,6 +94,8 @@ func apiEmployeeDeleteById(c *gin.Context) {
 		c.IndentedJSON(http.StatusNoContent, employee)
 	}
 }
+
+// Det kommer alltså in en ny employee som JSON på nåt sätt
 func apiEmployeeAdd(c *gin.Context) {
 	var employee data.Employee
 	if err := c.BindJSON(&employee); err != nil {
