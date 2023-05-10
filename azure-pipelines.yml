@@ -1,0 +1,26 @@
+trigger:
+- main
+
+variables:
+  tag: '$(Build.BuildId)'
+
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+      - task: CmdLine@2
+        inputs:
+          script: |
+            # echo 'Build.BuildNumber' > $(Build.SourcesDirectory)/TimeApp/wwwroot/ver.txt
+            # echo $(Build.BuildNumber) >> $(Build.SourcesDirectory)/TimeApp/wwwroot/ver.txt
+            # echo 'Build.SourceVersion' >> $(Build.SourcesDirectory)/TimeApp/wwwroot/ver.txt
+            # echo $(Build.SourceVersion) >> $(Build.SourcesDirectory)/TimeApp/wwwroot/ver.txt
+            go test
+            docker build -t git.systementor.se/yacloud/stefan230503 .
+            docker login -u yacloud -p yacloud1 https://git.systementor.se
+            docker push git.systementor.se/yacloud/stefan230503
