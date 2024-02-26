@@ -126,6 +126,7 @@ func main() {
 	router := gin.Default()
 	router.LoadHTMLGlob("templates/**")
 	router.GET("/", start)
+	router.GET("/start", start)
 	router.GET("/api/employee", apiEmployee)
 	router.GET("/api/employee/:id", apiEmployeeById)
 	router.PUT("/api/employee/:id", apiEmployeeUpdateById)
