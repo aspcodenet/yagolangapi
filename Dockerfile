@@ -1,22 +1,18 @@
-FROM golang:alpine
+FROM golang:alpine AS builder
 
-WORKDIR /app
+RUN apk update && apk add --no-cache git
+WORKDIR $GOPATH/src/mypackage/myapp/
+COPY . .
 
-COPY go.mod ./
-COPY go.sum ./
-COPY *.yml ./
-RUN go mod download
-COPY database/gorm.sqlite database/sqlite
-COPY database/gorm.sqlite /database/sqlite
+RUN go get -d -v
 
-COPY *.go ./
-COPY data/*.go ./data/
-COPY templates/* ./templates/
+RUN go build -o /app/cmd/site
 
-RUN go build -o /applikationen
-RUN mkdir -p /database
+FROM scratch
 
+COPY --from=builder /app/cmd/site /site
+COPY *.yml /
+COPY templates/* /templates/
 
 EXPOSE 8080
-
-CMD [ "/applikationen" ]
+ENTRYPOINT ["/site"]
