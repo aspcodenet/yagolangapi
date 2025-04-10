@@ -1,0 +1,13 @@
+### get all
+GET http://172.232.137.18/api/employee
+
+### update
+PUT http://172.232.137.18/api/employee/1
+content-type: application/json
+
+{
+    "Age": 50,
+    "City": "Test",
+    "Namn":"Stefan2"
+}   
+
